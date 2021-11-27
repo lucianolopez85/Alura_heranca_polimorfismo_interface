@@ -1,8 +1,8 @@
-class Conta(titular: String, conta: Int) {
+open class Conta(titular: String, conta: Int) {
     var saldo = 0.0
-        private set
+//        private set
 
-    fun deposito(valor: Double) {
+    open fun deposito(valor: Double) {
         this.saldo += valor
     }
 
@@ -10,7 +10,7 @@ class Conta(titular: String, conta: Int) {
         this.saldo -= valor
     }
 
-    fun transferencia(valor: Double, destino: Conta) {
+    open fun transferencia(valor: Double, destino: Conta) {
         if (saldo >= valor) {
             saldo -= valor
             destino.saldo += valor
