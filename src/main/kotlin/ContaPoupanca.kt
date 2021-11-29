@@ -3,6 +3,16 @@ class ContaPoupanca(
     conta: Int,
 ) : Conta(titular, conta) {
     override fun deposito(valor: Double) {
-        this.saldo += valor*1.007
+        saldo += valor
     }
+
+    override fun saque(valor: Double) {
+        saldo -= valor
+    }
+
+    override fun transferencia(valor: Double, destino: Conta) {
+        saque(valor)
+        destino.deposito(valor*0.99998)
+    }
+
 }

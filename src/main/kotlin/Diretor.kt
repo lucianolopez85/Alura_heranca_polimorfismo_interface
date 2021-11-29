@@ -7,10 +7,10 @@ class Diretor(
 ) : Gerente(nome, cpf, salario, senha) {
 
     override fun bonificacao(): Double {
-        return this.salario * 0.3
+        return salario * 0.3
     }
 
     fun total():Double{
-        return super.bonificacao() + salario + plr
+        return salario + plr
     }
 }

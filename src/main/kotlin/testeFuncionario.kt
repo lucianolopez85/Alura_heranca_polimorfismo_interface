@@ -1,9 +1,5 @@
 fun testeFuncionario() {
-    val funcionario01 = Funcionario(
-        "Luciano",
-        "055.155.255-35",
-        5500.0,
-    )
+
     val funcionario02 = Gerente(
         "Hadassa",
         "055.155.255-35",
@@ -18,13 +14,11 @@ fun testeFuncionario() {
         4321,
         600.0
     )
-
-    funcionario01.bonificacao()
-    println("Nome: ${funcionario01.nome}")
-    println("Salário: ${funcionario01.salario}")
-    println("Bonificação: ${funcionario01.bonificacao()}")
-    println("##################################\n")
-
+    val funcionario04 = Analista(
+        "Luciano",
+        "055.155.255-35",
+        5000.0,
+    )
     funcionario02.bonificacao()
     println("Nome: ${funcionario02.nome}")
     println("Salário: ${funcionario02.salario}")
@@ -41,11 +35,17 @@ fun testeFuncionario() {
     println("Total: ${funcionario03.total()}")
     println("##################################\n")
 
+    funcionario04.bonificacao()
+    println("Nome: ${funcionario04.nome}")
+    println("Salário: ${funcionario04.salario}")
+    println("Bonificação: ${funcionario04.bonificacao()}")
+    println("##################################\n")
+
     val calculadora = CalculadoraBonificacao()
 
-    calculadora.registro(funcionario01)
     calculadora.registro(funcionario02)
     calculadora.registro(funcionario03)
+    calculadora.registro(funcionario04)
 
     println("Valor Total Bonificação: ${calculadora.total}")
 }
