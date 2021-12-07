@@ -1,5 +1,6 @@
 fun main() {
-    testeContasPoupancaCorrente()
+    testeAutenticacao()
+//    testeContasPoupancaCorrente()
 //    testeFuncionario()
 //    testeMovimentacao()
 }

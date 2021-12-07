@@ -4,15 +4,14 @@ fun testeFuncionario() {
         "Hadassa",
         "055.155.255-35",
         8000.0,
-        1234
     )
 
     val funcionario03 = Diretor(
         "Valter",
         "055.155.255-35",
         11000.0,
-        4321,
-        600.0
+        4321.0,
+        1234
     )
     val funcionario04 = Analista(
         "Luciano",
@@ -23,7 +22,7 @@ fun testeFuncionario() {
     println("Nome: ${funcionario02.nome}")
     println("Salário: ${funcionario02.salario}")
     println("Bonificação: ${funcionario02.bonificacao()}")
-    funcionario02.autenticacao(1234)
+//    funcionario02.autenticacao(1234)
     println("##################################\n")
 
     funcionario03.bonificacao()
