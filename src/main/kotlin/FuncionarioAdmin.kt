@@ -3,8 +3,15 @@ abstract class FuncionarioAdmin(
     cpf: String,
     salario: Double,
     senha: Int,
-) : Funcionario(nome, cpf, salario) {
+) : Funcionario(
+    nome, cpf, salario
+) {
     abstract val senha: Int
 
-    abstract fun autenticacao(senha: Int): Boolean
+    open fun autentica(senha: Int): Boolean{
+        if (this.senha==senha){
+            return true
+        }
+        return false
+    }
 }
