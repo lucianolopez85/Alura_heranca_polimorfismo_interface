@@ -1,8 +1,11 @@
+package modelo
+
 class Analista(
     nome: String,
     cpf: String,
     salario: Double,
-    val senha: Int
+    val senha: Int,
+    var endereco: Endereco = Endereco()
 ) : Funcionario(
     nome, cpf, salario
 ), Autenticavel {

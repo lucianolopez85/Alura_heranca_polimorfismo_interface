@@ -1,3 +1,8 @@
+import modelo.Analista
+import modelo.CalculadoraBonificacao
+import modelo.Diretor
+import modelo.Gerente
+
 fun testeFuncionario() {
 
     val funcionario02 = Gerente(
@@ -14,24 +19,24 @@ fun testeFuncionario() {
         4321.0,
         1234
     )
+
     val funcionario04 = Analista(
         "Luciano",
         "055.155.255-35",
         5000.0,
         5555
     )
+
     funcionario02.bonificacao()
     println("Nome: ${funcionario02.nome}")
     println("Salário: ${funcionario02.salario}")
     println("Bonificação: ${funcionario02.bonificacao()}")
-//    funcionario02.autenticacao(1234)
     println("##################################\n")
 
     funcionario03.bonificacao()
     println("Nome: ${funcionario03.nome}")
     println("Salário: ${funcionario03.salario}")
     println("Bonificação: ${funcionario03.bonificacao()}")
-//    funcionario03.autenticacao(4321)
     println("PLR: ${funcionario03.plr}")
     println("Total: ${funcionario03.total()}")
     println("##################################\n")

@@ -1,3 +1,5 @@
+package modelo
+
 class ContaCorrente(
     titular: String,
     conta: Int
@@ -12,8 +14,6 @@ class ContaCorrente(
 
     override fun transferencia(valor: Double, destino: Conta) {
         saque(valor)
-        destino.deposito(valor*0.9998)
+        destino.deposito(valor * 0.9998)
     }
-
-
 }

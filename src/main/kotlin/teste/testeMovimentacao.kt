@@ -1,3 +1,6 @@
+import modelo.ContaCorrente
+import modelo.ContaPoupanca
+
 fun testeMovimentacao() {
     var conta01 = ContaCorrente("Luciano", 1001)
     var conta02 = ContaPoupanca("Hadassa", 1002)

@@ -1,3 +1,5 @@
+import modelo.*
+
 fun testeAutenticacao() {
     val diretor = Diretor(
         "Valter",
@@ -18,7 +20,10 @@ fun testeAutenticacao() {
         "Luciano",
         "033.133.233-33",
         5500.0,
-        3333
+        3333,
+        endereco = Endereco(
+            rua = "rua de baixo"
+        )
     )
 
     val sistema = Sistema()
@@ -26,10 +31,11 @@ fun testeAutenticacao() {
     val cliente = Cliente(
         "Leticia",
         "022.122.222-32",
-        5555
+        5555,
+        endereco = Endereco(rua = "Estrada de nuvens", numero = 461, bairro = "Ingleses")
     )
 
-    println("##################################\n")
+    println("\n")
     if (sistema.entra(diretor, 1234)) {
         diretor.cargo()
         diretor.bonificacao()
@@ -39,7 +45,7 @@ fun testeAutenticacao() {
         println("PLR: ${diretor.plr}")
         println("Total: ${diretor.total()}")
         println("##################################\n")
-    }else{
+    } else {
         println("##################################\n")
     }
 
@@ -50,22 +56,29 @@ fun testeAutenticacao() {
         println("Salário: ${gerente.salario}")
         println("Bonificação: ${gerente.bonificacao()}")
         println("##################################\n")
-    }else{
+    } else {
         println("##################################\n")
     }
-    if (sistema.entra(analista, 3333)){
+
+    if (sistema.entra(analista, 3333)) {
         analista.cargo()
         analista.bonificacao()
         println("Nome: ${analista.nome}")
         println("Salário: ${analista.salario}")
         println("Bonificação: ${analista.bonificacao()}")
+        println("Endereço: \n${analista.endereco.rua}")
         println("##################################\n")
-    }else {
+    } else {
         println("##################################\n")
     }
 
-    if(sistema.entra(cliente, 5555)){
+    if (sistema.entra(cliente, 5555)) {
         println("Nome: ${cliente.nome}")
+        println(
+            "Endereço: " +
+                    "\nrua ${cliente.endereco.rua}, n° " +
+                    "${cliente.endereco.numero}, Bairro " +
+                    "${cliente.endereco.bairro}"
+        )
     }
-
 }

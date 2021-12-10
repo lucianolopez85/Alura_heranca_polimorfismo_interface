@@ -1,15 +1,20 @@
-class Diretor(
+package modelo
+
+open class Gerente(
     nome: String,
     cpf: String,
     salario: Double,
-    var plr: Double,
-    override val senha: Int
+    override val senha: Int,
 ) : FuncionarioAdmin(
     nome, cpf, salario, senha
 ), Autenticavel {
 
+    override fun cargo() {
+        println("Gerente")
+    }
+
     override fun bonificacao(): Double {
-        return salario * 0.3
+        return salario * 0.2
     }
 
     override fun autentica(senha: Int): Boolean {
@@ -17,13 +22,5 @@ class Diretor(
             return true
         }
         return false
-    }
-
-    override fun cargo() {
-        println("Diretor")
-    }
-
-    fun total(): Double {
-        return salario + plr + bonificacao()
     }
 }

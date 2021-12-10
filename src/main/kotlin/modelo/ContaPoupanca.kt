@@ -1,3 +1,5 @@
+package modelo
+
 class ContaPoupanca(
     titular: String,
     conta: Int,
@@ -12,7 +14,7 @@ class ContaPoupanca(
 
     override fun transferencia(valor: Double, destino: Conta) {
         saque(valor)
-        destino.deposito(valor*0.99998)
+        destino.deposito(valor * 0.99998)
     }
 
 }
